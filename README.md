@@ -38,8 +38,8 @@ This project is a countdown web app built with Angular and TypeScript. It allows
 1. **Clone the repository**:
 
    ```bash
-   git clone <https://github.com/your-username/countdown-web-app.git>
-   cd countdown-web-app
+   git clone <https://github.com/thandaoo/event-countdown-web-app.git>
+   cd event-countdown-web-app
 
 2. **Install dependencies**:
 

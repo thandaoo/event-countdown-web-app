@@ -1,27 +1,57 @@
-# EventCountdownApp
+# Event Countdown App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.1.
+## Live Demo
 
-## Development server
+The application has been deployed and is accessible via the following URL:
+<!--todo add live demo -->
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## About
 
-## Code scaffolding
+This project is a countdown web app built with Angular and TypeScript. It allows users to set an event name and end date, displaying the remaining time in days, hours, minutes, and seconds. The app features dynamic text fitting, adjusting text size to perfectly fit the screen in both portrait and landscape modes. Event details are saved between sessions for persistence.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Features
 
-## Build
+- **Event Countdown**: Displays the remaining time until a specified event, starting from the current time.
+- **Dynamic Text Resizing**: Implements a custom algorithm to ensure that the text (event name and countdown) always fits the entire width of the screen without line breaks.
+- **Responsive Design**: Works in both portrait and landscape modes.
+- **Data Persistence**: The event name and date are saved to local storage and persisted across page reloads.
+- **Reusable Components**: The text fitting solution is reusable and can be applied to other elements or components in the application.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Tech Stack
 
-## Running unit tests
+- **Angular**: Latest stable version (v18.2.0).
+- **TypeScript**: Type-based Angular.
+- **Luxon**: Date handling and manipulation.
+- **RxJS**: Used for handling asynchronous events.
+- **Angular Material**: UI components
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Setup Instructions
 
-## Running end-to-end tests
+### Prerequisites
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Node.js (version 22.4.1)
+- npm (version 10.8.1)
+- Angular CLI (optional)
 
-## Further help
+### Installation
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. **Clone the repository**:
+
+   ```bash
+   git clone <https://github.com/your-username/countdown-web-app.git>
+   cd countdown-web-app
+
+2. **Install dependencies**:
+
+    ```bash
+    npm install
+
+3. **Run the application**:
+
+    ```bash
+    ng serve
+
+## Author
+
+- [@thandaoo](https://github.com/thandaoo)
+- [LinkedIn](https://www.linkedin.com/in/thanda-oo/)

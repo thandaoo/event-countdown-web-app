@@ -1,0 +1,221 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+:host {
+  --primary: #72035d;
+  --light: #f5f3f3;
+  --bright-blue: oklch(51.01% 0.274 263.83);
+  --gray-900: oklch(19.37% 0.006 300.98);
+  --gray-700: oklch(36.98% 0.014 302.71);
+  --gray-400: oklch(70.9% 0.015 304.04);
+
+  font-family:
+    'Inter',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol';
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 100%;
+  margin: 0;
+  white-space: nowrap;
+  padding: 2rem;
+}
+
+p {
+  color: var(--gray-900);
+  font-size: 0.8rem;
+  margin: 0;
+  white-space: nowrap;
+  padding: 2rem;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  box-sizing: inherit;
+  position: relative;
+  background-color: var(--light);
+  margin: 0px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+input {
+  height: 3rem;
+  width: 25vw;
+  background-color: var(--light);
+  font-size: 2em;
+  border-radius: 7px;
+  border: 1px solid var(--gray-900);
+  padding: 0.5rem;
+  color: var(--gray-700);
+  margin-top: -0.5em;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--light);
+  margin-bottom: 0;
+  margin-left: 1rem;
+  width: fit-content;
+  padding: 6px;
+  font-size: 1.3em;
+  position: sticky;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7rem;
+}
+
+.content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.event-form {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+.date-picker-icon {
+  float: right;
+  display: inline-flex;
+  width: 100%;
+  margin-top: -3.3rem;
+  justify-content: right;
+  margin-left: -4rem;
+}
+
+.date-input-container {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.error {
+  color: red;
+  display: block;
+  font-size: 0.8rem;
+  padding-left: 1rem;
+}
+
+@media screen and (max-width: 1330px) {
+  span,
+  input {
+    font-size: 1.5rem;
+    height: 3rem;
+    margin-left: 10px;
+    margin-top: -0.7em;
+  }
+
+  label {
+    font-size: 1rem;
+  }
+
+  .event-form {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: baseline;
+    justify-content: center;
+    margin-top: 4rem;
+  }
+
+  .date-input-container {
+    display: block;
+  }
+
+  .date-input-wrapper {
+    display: block;
+    height: max-content;
+  }
+
+  .date-picker-icon {
+    margin-top: -3.3rem;
+    justify-content: right;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  span,
+  input {
+    font-size: 1.5rem;
+    width: 85%;
+    height: 3rem;
+    margin-left: 10px;
+  }
+
+  label {
+    font-size: 1rem;
+  }
+
+  .event-form {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4rem;
+    width: 100%;
+  }
+
+  .date-picker-icon {
+    float: left;
+    margin-left: -4rem;
+  }
+
+  .date-input-container {
+    display: block;
+  }
+
+  .date-input-wrapper {
+    display: inline;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .date-picker-icon {
+    float: left;
+    margin-left: -3rem;
+  }
+}
+
+@media screen and (max-width: 335px) {
+  .date-picker-icon {
+    float: left;
+    margin-left: -1rem;
+  }
+}

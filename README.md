@@ -3,7 +3,8 @@
 ## Live Demo
 
 The application has been deployed and is accessible via the following URL:
-<!--todo add live demo -->
+
+ [Live Demo URL](<https://thandaoo.github.io/event-countdown-web-app/>)
 
 ## About
 

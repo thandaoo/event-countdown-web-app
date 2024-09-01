@@ -56,7 +56,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   private resizeSubscription: Subscription | null = null
 
   private readonly _currentYear = new Date().getFullYear()
-  readonly minDate = DateTime.local().toJSDate()
+  readonly minDate = DateTime.local().plus({ days: 1 }).toJSDate()
   readonly maxDate = new Date(this._currentYear + 1, 11, 31)
 
   constructor(private cdr: ChangeDetectorRef) {}
@@ -104,6 +104,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   public onInputChange() {
     sessionStorage.setItem('eventName', this.eventName)
     sessionStorage.setItem('eventDate', this.eventDate?.toISOString())
+    console.log('this.eventDate: ', this.eventDate)
 
     this.startCountdown()
     this.fitText()

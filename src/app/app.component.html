@@ -28,8 +28,8 @@
           [(ngModel)]="eventDate"
           [min]="minDate"
           [max]="maxDate"
-          required
           (dateChange)="onInputChange()"
+          required
         />
         <mat-datepicker-toggle
           matSuffix
@@ -48,15 +48,13 @@
     </span>
   </form>
   <footer>
-    <p>
-      Thanks for visiting! Built by
-      <a
-        href="https://github.com/thandaoo"
-        target="_blank"
-        rel="noopener noreferrer"
-        >Thanda Oo</a
-      >
-      v1.0.0
-    </p>
+    Thanks for visiting! Built by{{ ' ' }}
+    <a
+      href="https://github.com/thandaoo"
+      target="_blank"
+      rel="noopener noreferrer"
+      >Thanda Oo</a
+    >
   </footer>
+  <small class="version">v1.0.0</small>
 </main>

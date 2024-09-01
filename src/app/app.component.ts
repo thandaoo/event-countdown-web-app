@@ -4,6 +4,7 @@ import {
   ChangeDetectorRef,
   Component,
   ElementRef,
+  HostListener,
   OnDestroy,
   OnInit,
   ViewChild,
@@ -41,7 +42,6 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     month: 6,
     day: 24,
   })
-
   eventName = 'Midsummer Eve'
   eventDate = this.midsummerDayNextYear.toJSDate()
   remainingTime: {
@@ -52,6 +52,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   } = { days: 7, hours: 0, minutes: 0, seconds: 0 }
   totalSeconds: number = 0
   intervalId: any
+
   private resizeSubscription: Subscription | null = null
 
   private readonly _currentYear = new Date().getFullYear()
@@ -61,8 +62,8 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   constructor(private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
-    const storedEventName = localStorage.getItem('eventName')
-    const storedEventDate = localStorage.getItem('eventDate')
+    const storedEventName = sessionStorage.getItem('eventName')
+    const storedEventDate = sessionStorage.getItem('eventDate')
     if (storedEventName && storedEventDate) {
       this.eventName = storedEventName
       this.eventDate = new Date(storedEventDate)
@@ -70,6 +71,8 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     this.startCountdown()
   }
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event): void {}
   @ViewChild('eventTitle', { static: false }) eventTitle!: ElementRef
   @ViewChild('remainingDateTime', { static: false })
   remainingDateTime!: ElementRef
@@ -99,10 +102,10 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   public onInputChange() {
-    localStorage.setItem('eventName', this.eventName)
-    localStorage.setItem('eventDate', this.eventDate?.toISOString())
+    sessionStorage.setItem('eventName', this.eventName)
+    sessionStorage.setItem('eventDate', this.eventDate?.toISOString())
 
-    this.updateTime()
+    this.startCountdown()
     this.fitText()
   }
 
